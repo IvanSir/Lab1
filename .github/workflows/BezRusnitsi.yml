@@ -1,0 +1,16 @@
+name: Proverka
+
+on:
+  status:
+  push:
+    branches: [ master ] 
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@master  
+    - name: build Lab5var30
+      run: cd Lab5var30 && make 
+    - name: make clean
+      run: cd Lab5var30 && make clean
